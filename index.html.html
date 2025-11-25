@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="La Bendición - Barbería profesional en Santo Domingo. Cortes modernos, afeitado clásico y cuidado personal masculino.">
+    <title>La Bendición ✂️ | Barbería Profesional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --gold: #d4af37;
+            --gold-light: #f4d678;
+            --gold-dark: #b8941f;
+            --brown-dark: #2c1810;
+            --brown: #5d452b;
+            --brown-light: #8b6f47;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #0a0a0a;
+            overflow-x: hidden;
+        }
+
+        /* Particles Background */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        /* Header con efecto glassmorphism */
+        header {
+            background: rgba(44, 24, 16, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            transition: all 0.3s;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 5px var(--gold));
+            }
+
+            50% {
+                filter: drop-shadow(0 0 20px var(--gold));
+            }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section con animación */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0a0a0a 0%, var(--brown-dark) 50%, #1a1410 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, white 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+            animation: slideInLeft 1s ease-out 0.3s both;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: var(--gold-light);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            animation: slideInRight 1s ease-out 0.5s both;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            animation: fadeIn 1s ease-out 0.7s both;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--brown-dark);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+            position: relative;
+            overflow: hidden;
+            animation: bounce 2s ease-in-out 1s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6);
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(-20px);
+            }
+        }
+
+        .scroll-indicator span {
+            display: block;
+            width: 30px;
+            height: 50px;
+            border: 2px solid var(--gold);
+            border-radius: 25px;
+            position: relative;
+        }
+
+        .scroll-indicator span::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            animation: scroll 2s infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                opacity: 1;
+                top: 10px;
+            }
+
+            100% {
+                opacity: 0;
+                top: 30px;
+            }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 6rem;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: var(--gold);
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            animation: expand 2s ease-in-out infinite;
+        }
+
+        @keyframes expand {
+
+            0%,
+            100% {
+                width: 100px;
+            }
+
+            50% {
+                width: 200px;
+            }
+        }
+
+        /* About Section con efecto parallax */
+        .about-content {
+            background: linear-gradient(135deg, rgba(44, 24, 16, 0.9), rgba(93, 69, 43, 0.9));
+            backdrop-filter: blur(10px);
+            padding: 4rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-content::before {
+            content: '✂️';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            font-size: 300px;
+            opacity: 0.05;
+            transform: rotate(-15deg);
+        }
+
+        .about-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* Stats Counter */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 0.5rem;
+        }
+
+        /* Services Grid con hover effect */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, rgba(44, 24, 16, 0.9), rgba(93, 69, 43, 0.8));
+            backdrop-filter: blur(10px);
+            padding: 3rem 2rem;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(212, 175, 55, 0.4);
+            border-color: var(--gold);
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .service-card:hover .service-icon {
+            animation: bounce 0.5s;
+        }
+
+        .service-card h3 {
+            color: var(--gold-light);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            color: var(--gold);
+            font-weight: 900;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .value-card {
+            background: linear-gradient(135deg, rgba(44, 24, 16, 0.9), rgba(93, 69, 43, 0.8));
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border-left: 5px solid var(--gold);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            transition: all 0.5s;
+        }
+
+        .value-card:hover::after {
+            top: -100%;
+            right: -100%;
+        }
+
+        .value-card:hover {
+            transform: translateX(10px);
+            border-left-width: 10px;
+        }
+
+        .value-card h3 {
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .value-card p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 350px;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s;
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--brown-dark), var(--gold));
+            opacity: 0.7;
+            transition: opacity 0.4s;
+        }
+
+        .gallery-item:hover::before {
+            opacity: 0.3;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.4);
+        }
+
+        .gallery-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            background: linear-gradient(135deg, var(--brown-dark), var(--brown));
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .contact-item {
+            background: linear-gradient(135deg, rgba(44, 24, 16, 0.9), rgba(93, 69, 43, 0.8));
+            backdrop-filter: blur(10px);
+            padding: 3rem 2rem;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(212, 175, 55, 0.4);
+        }
+
+        .contact-item .icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .contact-item h3 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-item p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+        }
+
+        .contact-item a {
+            color: var(--gold-light);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--brown-dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 1.1rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(44, 24, 16, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .services-grid,
+            .values-grid,
+            .gallery-grid,
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--brown-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        .loading.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader {
+            width: 80px;
+            height: 80px;
+            border: 5px solid rgba(212, 175, 55, 0.2);
+            border-top-color: var(--gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="#" class="logo">✂️ LA BENDICIÓN</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio" onclick="closeMenu()">Inicio</a></li>
+                <li><a href="#nosotros" onclick="closeMenu()">Nosotros</a></li>
+                <li><a href="#servicios" onclick="closeMenu()">Servicios</a></li>
+                <li><a href="#galeria" onclick="closeMenu()">Galería</a></li>
+                <li><a href="#contacto" onclick="closeMenu()">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>LA BENDICIÓN</h1>
+            <p class="subtitle">BARBERÍA PROFESIONAL</p>
+            <p>Donde el estilo se encuentra con la tradición. Más de 5 años transformando looks en Santo Domingo.</p>
+            <a href="#contacto" class="btn">RESERVA TU CITA</a>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="5000">0</div>
+                    <div class="stat-label">Clientes Satisfechos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="5">0</div>
+                    <div class="stat-label">Años de Experiencia</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="8">0</div>
+                    <div class="stat-label">Servicios Premium</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-label">% Satisfacción</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="nosotros">
+            <h2>Sobre Nosotros</h2>
+            <div class="about-content">
+                <p>
+                    Bienvenido a <strong>La Bendición</strong>, tu barbería de confianza en Santo Domingo.
+                    Desde nuestros inicios, nos hemos dedicado a ofrecer servicios de calidad superior en
+                    corte de cabello, afeitado clásico y cuidado personal masculino.
+                </p>
+                <p>
+                    Nuestro equipo de barberos profesionales está comprometido con la excelencia y la
+                    satisfacción de cada cliente. Utilizamos las mejores técnicas tradicionales combinadas
+                    con las tendencias más modernas para garantizar que salgas luciendo impecable.
+                </p>
+                <p>
+                    En La Bendición, no solo ofrecemos un servicio, creamos una experiencia. Cada visita
+                    es una oportunidad para relajarte, renovarte y sentirte como nuevo.
+                </p>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section>
+            <h2>Nuestros Valores</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>🎯 Misión</h3>
+                    <p>
+                        Ofrecer servicios de barbería de alta calidad que superen las expectativas de
+                        nuestros clientes, brindando un ambiente profesional y acogedor donde cada persona
+                        se sienta valorada y bien atendida.
+                    </p>
+                </div>
+                <div class="value-card">
+                    <h3>👁️ Visión</h3>
+                    <p>
+                        Ser la barbería líder en Santo Domingo, reconocida por nuestra excelencia en el
+                        servicio, innovación en técnicas de corte y compromiso con la satisfacción del cliente.
+                    </p>
+                </div>
+                <div class="value-card">
+                    <h3>💎 Valores</h3>
+                    <p>
+                        Profesionalismo, calidad, respeto, puntualidad e higiene. Nos comprometemos a
+                        mantener los más altos estándares en cada servicio que ofrecemos.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="servicios">
+            <h2>Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">✂️</div>
+                    <h3>Corte de Cabello</h3>
+                    <p>Cortes modernos y clásicos adaptados a tu estilo personal</p>
+                    <div class="price">$300</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💈</div>
+                    <h3>Corte + Barba</h3>
+                    <p>Servicio completo para lucir impecable de pies a cabeza</p>
+                    <div class="price">$450</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🧔</div>
+                    <h3>Arreglo de Barba</h3>
+                    <p>Perfilado y cuidado profesional de tu barba</p>
+                    <div class="price">$200</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Tinte de Cabello</h3>
+                    <p>Coloración profesional con productos de primera calidad</p>
+                    <div class="price">$500</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">👶</div>
+                    <h3>Corte Niño</h3>
+                    <p>Cortes especiales para los más pequeños de la casa</p>
+                    <div class="price">$200</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🪒</div>
+                    <h3>Afeitado Clásico</h3>
+                    <p>Experiencia tradicional con toalla caliente y navaja</p>
+                    <div class="price">$350</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="galeria">
+            <h2>Galería de Trabajos</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">✂️</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">💈</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">🧔</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">🪒</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">🎨</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">👔</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contacto">
+            <h2>Contáctanos</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="icon">📍</div>
+                    <h3>Dirección</h3>
+                    <p>Santo Domingo<br>República Dominicana</p>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">📞</div>
+                    <h3>Teléfono</h3>
+                    <p><a href="tel:+18091234567">(809) 123-4567</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">📧</div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:info@labendicion.com">info@labendicion.com</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">🕐</div>
+                    <h3>Horario</h3>
+                    <p>Lunes a Sábado<br>9:00 AM - 7:00 PM</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 La Bendición - Barbería Profesional. Todos los derechos reservados.</p>
+        <p style="margin-top: 1rem; opacity: 0.5;">Diseñado con ❤️ en Santo Domingo</p>
+    </footer>
+
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- JavaScript -->
+    <script>
+        // Loading Screen
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('.loading').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Particles.js Configuration
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#d4af37' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.3, random: true },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#d4af37',
+                    opacity: 0.2,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                },
+                modes: {
+                    repulse: { distance: 100, duration: 0.4 },
+                    push: { particles_nb: 4 }
+                }
+            },
+            retina_detect: true
+        });
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll Reveal Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.stat-number');
+        let counterAnimated = false;
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = Math.ceil(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+
+                updateCounter();
+            });
+        };
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !counterAnimated) {
+                    animateCounters();
+                    counterAnimated = true;
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('active');
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Parallax Effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero');
+            if (parallax) {
+                parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Service Cards Stagger Animation
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
+    </script>
+</body>
+
+</html>
